@@ -1,46 +1,43 @@
-SRC_PATH = 		srcs/
-SRC_NAME =		cercle.c \
-				main.c \
-				
-SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
+##
+## Makefile for fdf in /home/plasko_a/rendu/MUL_2013_fdf
+## 
+## Made by Antoine Plaskowski
+## Login   <plasko_a@epitech.net>
+## 
+## Started on  Thu Nov 21 08:52:14 2013 Antoine Plaskowski
+## Last update Sun Dec  8 16:34:29 2013 Antoine Plaskowski
+##
 
-OBJ_PATH =		objs/
-OBJ_NAME = 		$(SRC_NAME:.c=.o)
-OBJ =			$(addprefix $(OBJ_PATH),$(OBJ_NAME))
+CC	=	gcc
 
+RM	=	rm -f
 
+CFLAGS	+=	-Wall -Wextra -Werror
+CFLAGS	+=	-I include/ -I libft
 
-INC = 			-I include -I libft
+LDFLAGS	+=	-L minilibx -l mlx -L libft
+LDFLAGS	+=	-L/usr/lib64/X11 -l Xext -l X11 -lft
 
-LDLIBS = 		-lft
-LDFLAGS = 		-Llibft
-LIBFT_PATH = 	libft/
-LIBFT = 		$(LIBFT_PATH)libft.a
+NAME	=	fract-ol
 
-CC = 			clang
-CFLAGS = 		-Wall -Wextra -Werror
-NAME = 			"fract'ol"
+SRC	+=	src/fract-ol.c
+SRC	+=	src/print_color.c
 
-.PHONY: all clean fclean re
+OBJ	=	$(SRC:.c=.o)
 
-all: $(NAME)
+all	:	$(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
-	$(CC) $(INC) $(LDFLAGS) $(LDLIBS) -L mlx -lmlx -framework OpenGL -framework AppKit $^ -o $@
+$(NAME)	:	$(OBJ)
+		$(MAKE) -C minilibx
+		$(MAKE) -C libft
+		$(CC) $(OBJ) -o $(NAME) $(LDFLAGS)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	mkdir -p objs
-	$(CC) $(CFLAGS) $(INC) $(CPPFLAGS) -o $@ -c $<
+clean	:
+		$(RM) $(OBJ)
 
-$(LIBFT):
-	@make -C $(LIBFT_PATH)
+fclean	:	clean
+		$(RM) $(NAME)
 
-clean:
-	rm -rfv $(OBJ_PATH)
-	@make -C $(LIBFT_PATH) clean
+re	:	fclean all
 
-fclean: clean
-	rm -fv $(NAME)
-	@make -C $(LIBFT_PATH) fclean
-
-re: fclean all
+.PHONY	:	all clean fclean re
