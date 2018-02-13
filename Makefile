@@ -1,43 +1,60 @@
-##
-## Makefile for fdf in /home/plasko_a/rendu/MUL_2013_fdf
-## 
-## Made by Antoine Plaskowski
-## Login   <plasko_a@epitech.net>
-## 
-## Started on  Thu Nov 21 08:52:14 2013 Antoine Plaskowski
-## Last update Sun Dec  8 16:34:29 2013 Antoine Plaskowski
-##
+SRC_PATH = 		srcs/
+SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
+SRC_NAME +=		color.c 
+SRC_NAME +=		copy_struct.c 
+SRC_NAME +=		fill_pixel.c 
+SRC_NAME +=		key_input.c 
+SRC_NAME +=		main.c 
+SRC_NAME +=		manage_func.c 
+SRC_NAME +=		mandelbrot.c 
+SRC_NAME +=		mouse_input.c 
+SRC_NAME +=		zoom.c 
 
-CC	=	gcc
+OBJ_PATH =		objs/
+OBJ_NAME = 		$(SRC_NAME:.c=.o)
+OBJ =			$(addprefix $(OBJ_PATH),$(OBJ_NAME))
 
-RM	=	rm -f
+INC = 			-I include -I libft -I minilibx
 
-CFLAGS	+=	-Wall -Wextra -Werror
-CFLAGS	+=	-I include/ -I libft
+LDLIBS = 		-lft
+LDFLAGS = 		-L libft
+LIBFT_PATH = 	libft/
+LIBFT = 		$(LIBFT_PATH)libft.a
 
-LDFLAGS	+=	-L minilibx -l mlx -L libft
-LDFLAGS	+=	-L/usr/lib64/X11 -l Xext -l X11 -lft
+MLXFLAGS = 		-L minilibx
+MLXLIBS = 		-lmlx -framework OpenGL -framework AppKit
+MLX_PATH = 		minilibx/
+MLX = 			$(MLX_PATH)libmlx.a
 
-NAME	=	fract-ol
+CC = 			clang
+CFLAGS = 		-Wall -Wextra -Werror
+NAME = 			fract-ol
 
-SRC	+=	src/fract-ol.c
-SRC	+=	src/print_color.c
+.PHONY: all clean fclean re
 
-OBJ	=	$(SRC:.c=.o)
+all: $(NAME)
 
-all	:	$(NAME)
+$(NAME): $(MLX) $(LIBFT) $(OBJ)
+	$(CC) $(INC) $(LDFLAGS) $(LDLIBS) $(MLXFLAGS) $(MLXLIBS) $^ -o $@
 
-$(NAME)	:	$(OBJ)
-		$(MAKE) -C minilibx
-		$(MAKE) -C libft
-		$(CC) $(OBJ) -o $(NAME) $(LDFLAGS)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	mkdir -p objs
+	$(CC) $(CFLAGS) $(INC) $(CPPFLAGS) -o $@ -c $<
 
-clean	:
-		$(RM) $(OBJ)
+$(MLX):
+	make -C $(MLX_PATH)
 
-fclean	:	clean
-		$(RM) $(NAME)
+$(LIBFT):
+	@make -C $(LIBFT_PATH)
 
-re	:	fclean all
+clean:
+	rm -rfv $(OBJ_PATH)
+	@make -C $(MLX_PATH) clean
+	@make -C $(LIBFT_PATH) clean
 
-.PHONY	:	all clean fclean re
+fclean: clean
+	rm -fv $(NAME)
+#	@make -C $(MLX_PATH) fclean
+	@make -C $(LIBFT_PATH) fclean
+
+re: fclean all

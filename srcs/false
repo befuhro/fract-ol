@@ -1,0 +1,141 @@
+/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   mandelbrot.c                                     .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2018/02/11 18:10:50 by befuhro      #+#   ##    ##    #+#       */
+/*   Updated: 2018/02/13 20:36:00 by befuhro     ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
+/* ************************************************************************** */
+
+#include "fract-ol.h"
+
+void    *mandelbrot(void *ptr)
+{
+	t_fract	fract;
+	t_all	*ref;
+
+	ref = ptr;
+	ft_memcpy(&fract, ref->fract, sizeof(t_fract));
+	fract.y = -1;
+	while (++fract.y < 700)
+	{
+		fract.x = 0;
+		while (++fract.x < 1080)
+		{
+			fract.rC = fract.minX + (fract.maxX - fract.minX) / 2160 * fract.x;
+			fract.iC = fract.minY + (fract.maxY - fract.minY) / 700 * fract.y;
+			fract.rZ = 0;
+			fract.iZ = 0;
+			fract.count = -1;
+			while (++fract.count <= 50 && fract.rZ * fract.rZ + fract.iZ * fract.iZ <= 4)
+			{
+				fract.I = fract.iZ;
+				fract.iZ = (fract.rZ + fract.rZ) * fract.iZ + fract.iC;
+				fract.rZ = fract.rZ * fract.rZ - fract.I * fract.I + fract.rC;
+				ref->ptrColor[ref->indexColor](ref->image_string, fract.count, fract.x, fract.y);
+			}
+		}
+	}
+	return (0);
+}
+
+void	manage_mandelbrot(t_all *all)
+{
+	t_thread	struct1;
+	//	t_thread	struct2;
+
+	all->fract->x_begin = -1;
+	all->fract->x_end = 1080;
+
+
+	mandelbrot(all);
+//	pthread_create(&struct1.thread1, NULL, mandelbrot, (void*)all);
+//	all->fract->x_begin += 216;
+//	all->fract->x_end += 216;
+//	pthread_create(&struct1.thread2, NULL, mandelbrot, (void*)all);
+//	all->fract->x_begin += 216;
+//	all->fract->x_end += 216;
+//	pthread_create(&struct1.thread3, NULL, mandelbrot, (void*)all);
+//	all->fract->x_begin += 216;
+//	all->fract->x_end += 216;
+//	pthread_create(&struct1.thread4, NULL, mandelbrot, (void*)all);
+///	all->fract->x_begin += 216;
+//	all->fract->x_end += 216;
+//	pthread_create(&struct1.thread5, NULL, mandelbrot, (void*)all);
+//	all->fract->x_begin += 216;
+//	all->fract->x_end += 216;
+
+
+
+
+	pthread_join(struct1.thread1, NULL);
+//	pthread_join(struct1.thread2, NULL);
+//	pthread_join(struct1.thread3, NULL);
+//	pthread_join(struct1.thread4, NULL);
+//	pthread_join(struct1.thread5, NULL);
+
+
+
+
+
+	//	init_thread(&struct1, all);
+	//	init_thread(&struct2, all);
+	//	join_thread(&struct1, &struct2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void	init_thread(t_thread *s, t_all *all)
+{
+	pthread_create(&s->thread1, NULL, mandelbrot, (void*)all);
+	all->fract->x_begin += 216;
+	all->fract->x_end += 216;
+	pthread_create(&s->thread2, NULL, mandelbrot, (void*)all);
+	all->fract->x_begin += 216;
+	all->fract->x_end += 216;
+	pthread_create(&s->thread3, NULL, mandelbrot, (void*)all);
+	all->fract->x_begin += 216;
+	all->fract->x_end += 216;
+	pthread_create(&s->thread4, NULL, mandelbrot, (void*)all);
+	all->fract->x_begin += 216;
+	all->fract->x_end += 216;
+	pthread_create(&s->thread5, NULL, mandelbrot, (void*)all);
+	all->fract->x_begin += 216;
+	all->fract->x_end += 216;
+}
+
+void	join_thread(t_thread *s1, t_thread *s2)
+{
+	pthread_join(s1->thread1, NULL);
+	pthread_join(s1->thread2, NULL);
+	pthread_join(s1->thread3, NULL);
+	pthread_join(s1->thread4, NULL);
+	pthread_join(s1->thread5, NULL);
+	//	pthread_join(s2->thread1, NULL);
+	(void)s2;
+	//	pthread_join(s2->thread2, NULL);
+	//	pthread_join(s2->thread3, NULL);
+	//	pthread_join(s2->thread4, NULL);
+	//	pthread_join(s2->thread5, NULL);
+}
+
+
+
+
+
+

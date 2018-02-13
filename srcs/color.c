@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:09:31 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/13 01:00:03 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/13 15:31:05 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,7 +24,7 @@ void	first_color(char *image_string, float count, float x, float y)
 	z = count * (255 / 15);
 	color.green += z * count;
 	color.red += (z * count) / 3;
-	if (count == 20)
+	if (count == 50)
 	{
 		color.red = 255;
 		color.green = 255;
@@ -50,7 +50,7 @@ void	second_color(char *image_string, float count, float x, float y)
 		color.blue += (z * count);
 	if (count == 2)
 		color.green = 50;
-	if (count == 20)
+	if (count == 50)
 	{
 		color.red = 0;
 		color.green = 0;
@@ -70,7 +70,7 @@ void	third_color(char *image_string, float count, float x, float y)
 	z = count * (255 / 15);
 	color.blue += (z * count) * 2;
 	color.red += (z * count);
-	if (count == 20)
+	if (count == 50)
 	{
 		color.red = 0;
 		color.green = 0;

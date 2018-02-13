@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:02:57 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/12 22:48:13 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/13 15:38:46 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,7 @@ void	refresh_window(t_all *all)
 	if (all->indexColor == -1)
 		all->indexColor = 2;
 	mlx_clear_window(all->init, all->win);
-	mandelbrot(all->fract, all->image_string, all->ptrColor[all->indexColor]);
+	manage_mandelbrot(all);
 	mlx_put_image_to_window(all->image_string, all->win, all->image_ptr, 0, 0);
 }
 
