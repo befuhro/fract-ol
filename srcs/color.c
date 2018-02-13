@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:09:31 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/12 06:18:46 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/13 01:00:03 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,7 +24,7 @@ void	first_color(char *image_string, float count, float x, float y)
 	z = count * (255 / 15);
 	color.green += z * count;
 	color.red += (z * count) / 3;
-	if (count == 15)
+	if (count == 20)
 	{
 		color.red = 255;
 		color.green = 255;
@@ -42,7 +42,6 @@ void	second_color(char *image_string, float count, float x, float y)
 	color.green = 30;
 	color.blue = 30;
 	z = count * (255 / 15);
-
 	if (count == 1)
 		count = 6;
 	if ((int)count % 3 == 0 && count != 15)
@@ -50,12 +49,8 @@ void	second_color(char *image_string, float count, float x, float y)
 	else if ((int)count % 2 == 0)
 		color.blue += (z * count);
 	if (count == 2)
-	{
 		color.green = 50;
-		color.blue = 0;
-
-	}
-	if (count == 15)
+	if (count == 20)
 	{
 		color.red = 0;
 		color.green = 0;
@@ -69,11 +64,13 @@ void	third_color(char *image_string, float count, float x, float y)
 	t_color color;
 	float z;
 
-	color.red = 0;
-	color.green = 0;
-	color.blue = 255;
+	color.red = 30;
+	color.green = 225;
+	color.blue = 30;
 	z = count * (255 / 15);
-	if (count == 15)
+	color.blue += (z * count) * 2;
+	color.red += (z * count);
+	if (count == 20)
 	{
 		color.red = 0;
 		color.green = 0;

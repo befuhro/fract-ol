@@ -6,50 +6,36 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:50 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/12 04:31:46 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/13 00:59:45 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
 
- void    mandelbrot(char *image_string, ptr2func ptr)
+ void    mandelbrot(t_fract *fract, char *image_string, ptr2func ptr)
 {
-	float   minX = -2.6;
-	float   maxX = 2.6;
-	float   minY = -1.5;
-	float   maxY = 1.5;
-	float   x = 0;
-	float   y = 0;
-	float   rC;
-	float   iC;
-	float   rZ;
-	float   iZ;
-	float   I;
-	float   count;
-	float   R;
-	while (y < 700)
+	fract->y = -1;
+	while (++fract->y < 700)
 	{
-		x = 0;
-		while (x < 1080)
+		fract->x = -1;
+		while (++fract->x < 1080)
 		{
-			rC = minX + (maxX - minX) / 1080 * x;
-			iC = minY + (maxY - minY) / 700 * y;
-			rZ = 0;
-			iZ = 0;
-			count = 0;
-			while (count < 15 && rZ * rZ + iZ * iZ <= 4)
+			fract->rC = fract->minX + (fract->maxX - fract->minX) / 1080 * fract->x;
+			fract->iC = fract->minY + (fract->maxY - fract->minY) / 700 * fract->y;
+			fract->rZ = 0;
+			fract->iZ = 0;
+			fract->count = 0;
+			while (fract->count < 20 && 
+				fract->rZ * fract->rZ + fract->iZ * fract->iZ <= 4)
 			{
-				R = rZ;
-				I = iZ;
-				rZ = R * R - I * I + rC;
-				iZ = 2 * R * I + iC;
-				count++;
-				ptr(image_string, count, x, y);
+				fract->I = fract->iZ;
+				fract->iZ = 2 * fract->rZ * fract->I + fract->iC;
+				fract->rZ = fract->rZ * fract->rZ - fract->I * 
+					fract->I + fract->rC;
+				fract->count++;
+				ptr(image_string, fract->count, fract->x, fract->y);
 			}
-			x++;
 		}
-		y++;
 	}
-	(void)link;
 }
