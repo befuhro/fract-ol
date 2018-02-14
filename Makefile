@@ -1,7 +1,6 @@
 SRC_PATH = 		srcs/
 SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
 SRC_NAME +=		color.c 
-SRC_NAME +=		copy_struct.c 
 SRC_NAME +=		fill_pixel.c 
 SRC_NAME +=		key_input.c 
 SRC_NAME +=		main.c 

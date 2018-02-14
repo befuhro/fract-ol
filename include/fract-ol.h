@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/13 23:17:00 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/14 21:37:29 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,33 +20,19 @@
 # include <stdlib.h>
 # include "libft.h"
 # include <math.h>
-#include <pthread.h>
+# include <pthread.h>
+# define	WIDTH	1366
+# define 	HEIGHT	720
 
-typedef	void	(*ptr2func)(char *, float, float, float);
+typedef	void	(*ptr2func)(char *, double, double, double);
 
-typedef	struct	s_thread
+typedef	struct	s_block
 {
 	pthread_t	thread1;
 	pthread_t	thread2;
 	pthread_t	thread3;
 	pthread_t	thread4;
-	pthread_t	thread5;
-	pthread_t	thread6;
-	pthread_t	thread7;
-	pthread_t	thread8;
-	pthread_t	thread9;
-	pthread_t	thread10;
-	pthread_t	thread11;
-	pthread_t	thread12;
-	pthread_t	thread13;
-	pthread_t	thread14;
-	pthread_t	thread15;
-	pthread_t	thread16;
-	pthread_t	thread17;
-	pthread_t	thread18;
-	pthread_t	thread19;
-	pthread_t	thread20;
-}				t_thread;
+}				t_block;
 
 typedef struct	s_color
 {
@@ -57,18 +43,20 @@ typedef struct	s_color
 
 typedef	struct	s_fract
 {
-	float	minX;
-	float	maxX;
-	float	minY;
-	float	maxY;
-	float	x;
-	float	y;
-	float	rC;
-	float	iC;
-	float	rZ;
-	float	iZ;
-	float	I;
-	float	Z;
+	double	minX;
+	double	maxX;
+	double	minY;
+	double	maxY;
+	double	x;
+	double	y;
+	double	c_r;
+	double	c_i;
+	double	z_r;
+	double	z_i;
+	double	z_rsqr;
+	double	z_isqr;
+	double	i;
+	double	z;
 	int		count;
 	int		y_begin;
 	int		y_end;
@@ -83,17 +71,17 @@ typedef struct	s_all
 	ptr2func  		*ptrColor;
 	int				indexColor;
 	t_fract			*fract;
+	int				index_thread;
 }				t_all;
 
 void	manage_mandelbrot(t_all *all);
-int		ft_hex1(float *z);
-int		ft_hex2(float *z);
-void    first_color(char *image_string, float count, float x, float y);
-void    second_color(char *image_string, float count, float x, float y);
-void    third_color(char *image_string, float count, float x, float y);
+void    first_color(char *image_string, double count, double x, double y);
+void    second_color(char *image_string, double count, double x, double y);
+void    third_color(char *image_string, double count, double x, double y);
 void	fill_pixel(char *image_string, int x, int y, t_color color);
 int		mouse_func(int mousecode, int x, int y, t_all *all);
 int		key_func(int keycode, t_all *all);
+void	refresh_window(t_all *all);
 void	zoom(t_all *all, int x, int y);
 void	unzoom(t_all *all, int x, int y);
 ptr2func	*makeTab(void);

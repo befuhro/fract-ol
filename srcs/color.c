@@ -6,17 +6,17 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:09:31 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/13 15:31:05 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/14 21:30:47 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
 
-void	first_color(char *image_string, float count, float x, float y)
+void	first_color(char *image_string, double count, double x, double y)
 {
 	t_color color;
-	float z;
+	double z;
 
 	color.red = 0;
 	color.green = 0;
@@ -24,7 +24,7 @@ void	first_color(char *image_string, float count, float x, float y)
 	z = count * (255 / 15);
 	color.green += z * count;
 	color.red += (z * count) / 3;
-	if (count == 50)
+	if (count == 40)
 	{
 		color.red = 255;
 		color.green = 255;
@@ -33,10 +33,10 @@ void	first_color(char *image_string, float count, float x, float y)
 	fill_pixel(image_string, x, y, color);
 }
 
-void	second_color(char *image_string, float count, float x, float y)
+void	second_color(char *image_string, double count, double x, double y)
 {
 	t_color color;
-	float z;
+	double z;
 
 	color.red = 235;
 	color.green = 30;
@@ -49,8 +49,8 @@ void	second_color(char *image_string, float count, float x, float y)
 	else if ((int)count % 2 == 0)
 		color.blue += (z * count);
 	if (count == 2)
-		color.green = 50;
-	if (count == 50)
+		color.green = 200;
+	if (count == 40)
 	{
 		color.red = 0;
 		color.green = 0;
@@ -59,10 +59,10 @@ void	second_color(char *image_string, float count, float x, float y)
 	fill_pixel(image_string, x, y, color);
 }
 
-void	third_color(char *image_string, float count, float x, float y)
+void	third_color(char *image_string, double count, double x, double y)
 {
 	t_color color;
-	float z;
+	double z;
 
 	color.red = 30;
 	color.green = 225;
@@ -70,7 +70,7 @@ void	third_color(char *image_string, float count, float x, float y)
 	z = count * (255 / 15);
 	color.blue += (z * count) * 2;
 	color.red += (z * count);
-	if (count == 50)
+	if (count == 40)
 	{
 		color.red = 0;
 		color.green = 0;
