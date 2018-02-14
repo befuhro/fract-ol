@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 20:13:21 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 23:15:32 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/14 23:31:47 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,16 +24,16 @@ void	zoom(t_all *all, int x, int y)
 
 
 	
-//	all->fract->minX += (x - (WIDTH / 2)) * (ratio / 100000);
-//	all->fract->maxX +=  (x - (WIDTH / 2)) * (ratio / 100000);
+	all->fract->minX += (x - (WIDTH / 2)) * (ratio / 260000);
+	all->fract->maxX +=  (x - (WIDTH / 2)) * (ratio / 260000);
 
-//	all->fract->minY +=  (y - (HEIGHT / 2)) * (ratio / 100000);
-//	all->fract->maxY +=  (y - (HEIGHT / 2)) * (ratio / 100000);
+	all->fract->minY +=  (y - (HEIGHT / 2)) * (ratio / 260000);
+	all->fract->maxY +=  (y - (HEIGHT / 2)) * (ratio / 260000);
 
-	all->fract->minX += 2.4 * (ratio / 100);
-	all->fract->maxX -= 2.4 * (ratio / 100);
-	all->fract->minY += 1.5 * (ratio / 100);
-	all->fract->maxY -= 1.5 * (ratio / 100);
+	all->fract->minX += ratio / (1000 / 2.4);
+	all->fract->maxX -= ratio / (1000 / 2.4);
+	all->fract->minY += ratio / (1000 / 1.5);
+	all->fract->maxY -= ratio / (1000 / 1.5);
 
 
 
