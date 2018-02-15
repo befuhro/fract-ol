@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:09:31 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 21:30:47 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/15 20:07:47 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,20 +16,27 @@
 void	first_color(char *image_string, double count, double x, double y)
 {
 	t_color color;
-	double z;
+	//	double z;
 
-	color.red = 0;
+	(void)count;
+	color.blue = (255 / 35) * 5;
 	color.green = 0;
-	color.blue = 255;
-	z = count * (255 / 15);
-	color.green += z * count;
-	color.red += (z * count) / 3;
-	if (count == 40)
+	color.red = (count * (255 / 35) / 1.5);
+
+	if (count - 5 > 0)
 	{
-		color.red = 255;
-		color.green = 255;
-		color.green = 255;
+		color.blue+= (count - 5) * (255 / 35);
+	
+	
 	}
+	if (count == 35)
+	{
+		color.blue = 0;
+		color.green = 0;
+		color.red = 0;
+	}
+
+
 	fill_pixel(image_string, x, y, color);
 }
 
@@ -50,7 +57,7 @@ void	second_color(char *image_string, double count, double x, double y)
 		color.blue += (z * count);
 	if (count == 2)
 		color.green = 200;
-	if (count == 40)
+	if (count == 35)
 	{
 		color.red = 0;
 		color.green = 0;
@@ -70,7 +77,7 @@ void	third_color(char *image_string, double count, double x, double y)
 	z = count * (255 / 15);
 	color.blue += (z * count) * 2;
 	color.red += (z * count);
-	if (count == 40)
+	if (count == 35)
 	{
 		color.red = 0;
 		color.green = 0;

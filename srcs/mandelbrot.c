@@ -6,14 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:50 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 21:30:43 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/15 19:54:32 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
-#include <stdio.h>
-
 
 void    *mandelbrot1(void *ptr)
 {
@@ -35,7 +33,7 @@ void    *mandelbrot1(void *ptr)
 			fract.count = -1;
 			fract.z_rsqr = 0;
 			fract.z_isqr = 0;
-			while (++fract.count <= 40 && fract.z_rsqr + fract.z_isqr <= 4)
+			while (++fract.count <= 35 && fract.z_rsqr + fract.z_isqr <= 4)
 			{
 				fract.z_i = (fract.z_r + fract.z_i) * (fract.z_r + fract.z_i) - fract.z_rsqr - fract.z_isqr;
 				fract.z_i += fract.c_i;
@@ -69,7 +67,7 @@ void    *mandelbrot2(void *ptr)
 			fract.count = -1;
 			fract.z_rsqr = 0;
 			fract.z_isqr = 0;
-			while (++fract.count <= 40 && fract.z_rsqr + fract.z_isqr <= 4)
+			while (++fract.count <= 35 && fract.z_rsqr + fract.z_isqr <= 4)
 			{
 				fract.z_i = (fract.z_r + fract.z_i) * (fract.z_r + fract.z_i) - fract.z_rsqr - fract.z_isqr;
 				fract.z_i += fract.c_i;
@@ -103,7 +101,7 @@ void    *mandelbrot3(void *ptr)
 			fract.count = -1;
 			fract.z_rsqr = 0;
 			fract.z_isqr = 0;
-			while (++fract.count <= 40 && fract.z_rsqr + fract.z_isqr <= 4)
+			while (++fract.count <= 35 && fract.z_rsqr + fract.z_isqr <= 4)
 			{
 				fract.z_i = (fract.z_r + fract.z_i) * (fract.z_r + fract.z_i) - fract.z_rsqr - fract.z_isqr;
 				fract.z_i += fract.c_i;
@@ -137,7 +135,7 @@ void    *mandelbrot4(void *ptr)
 			fract.z_i = 0;
 			fract.z_rsqr = 0;
 			fract.z_isqr = 0;
-			while (++fract.count <= 40 && fract.z_rsqr + fract.z_isqr <= 4)
+			while (++fract.count <= 35 && fract.z_rsqr + fract.z_isqr <= 4)
 			{
 				fract.z_i = (fract.z_r + fract.z_i) * (fract.z_r + fract.z_i) - fract.z_rsqr - fract.z_isqr;
 				fract.z_i += fract.c_i;
@@ -153,14 +151,17 @@ void    *mandelbrot4(void *ptr)
 
 void	manage_mandelbrot(t_all *all)
 {
-	t_block		block;
+	pthread_t 	thread1;
+	pthread_t 	thread2;
+	pthread_t 	thread3;
+	pthread_t 	thread4;
 
-	pthread_create(&block.thread1, NULL, mandelbrot1, (void*)all);
-	pthread_create(&block.thread2, NULL, mandelbrot2, (void*)all);
-	pthread_create(&block.thread3, NULL, mandelbrot3, (void*)all);
-	pthread_create(&block.thread4, NULL, mandelbrot4, (void*)all);
-	pthread_join(block.thread1, NULL);	
-	pthread_join(block.thread2, NULL);	
-	pthread_join(block.thread3, NULL);	
-	pthread_join(block.thread4, NULL);
+	pthread_create(&thread1, NULL, mandelbrot1, (void*)all);
+	pthread_create(&thread2, NULL, mandelbrot2, (void*)all);
+	pthread_create(&thread3, NULL, mandelbrot3, (void*)all);
+	pthread_create(&thread4, NULL, mandelbrot4, (void*)all);
+	pthread_join(thread1, NULL);	
+	pthread_join(thread2, NULL);	
+	pthread_join(thread3, NULL);	
+	pthread_join(thread4, NULL);
 }

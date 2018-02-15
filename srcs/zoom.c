@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 20:13:21 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/15 16:29:46 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/15 19:23:47 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,8 +21,8 @@ void	zoom(t_all *all, int x, int y)
 	
 	all->fract->minX += (x - (WIDTH / 2)) * (ratio / 284150);
 	all->fract->maxX += (x - (WIDTH / 2)) * (ratio / 284150);
-	all->fract->minY += (y - (HEIGHT / 2)) * (ratio / 238000);
-	all->fract->maxY += (y - (HEIGHT / 2)) * (ratio / 238000);
+	all->fract->minY += (y - (HEIGHT / 2)) * (ratio / 237800);
+	all->fract->maxY += (y - (HEIGHT / 2)) * (ratio / 237800);
 
 	all->fract->minX += ratio / (1000 / 2.4);
 	all->fract->maxX -= ratio / (1000 / 2.4);

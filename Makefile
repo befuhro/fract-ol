@@ -2,10 +2,12 @@ SRC_PATH = 		srcs/
 SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
 SRC_NAME +=		color.c 
 SRC_NAME +=		fill_pixel.c 
+SRC_NAME +=		ft_condi.c 
 SRC_NAME +=		key_input.c 
 SRC_NAME +=		main.c 
 SRC_NAME +=		manage_func.c 
 SRC_NAME +=		mandelbrot.c 
+SRC_NAME +=		mandelbrot2.c 
 SRC_NAME +=		mouse_input.c 
 SRC_NAME +=		zoom.c 
 

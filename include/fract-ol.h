@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 21:37:29 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/15 18:39:15 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,6 +32,10 @@ typedef	struct	s_block
 	pthread_t	thread2;
 	pthread_t	thread3;
 	pthread_t	thread4;
+	pthread_t	thread5;
+	pthread_t	thread6;
+	pthread_t	thread7;
+	pthread_t	thread8;
 }				t_block;
 
 typedef struct	s_color
@@ -86,5 +90,10 @@ void	zoom(t_all *all, int x, int y);
 void	unzoom(t_all *all, int x, int y);
 ptr2func	*makeTab(void);
 void	copy_struct(t_fract *origin, t_fract *copy);
+double	ft_condi(double min, double max);
+void    *mandelbrot5(void *ptr);
+void    *mandelbrot6(void *ptr);
+void    *mandelbrot7(void *ptr);
+void    *mandelbrot8(void *ptr);
 
 #endif
