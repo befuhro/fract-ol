@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/15 18:39:15 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/16 18:31:54 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,18 +25,6 @@
 # define 	HEIGHT	720
 
 typedef	void	(*ptr2func)(char *, double, double, double);
-
-typedef	struct	s_block
-{
-	pthread_t	thread1;
-	pthread_t	thread2;
-	pthread_t	thread3;
-	pthread_t	thread4;
-	pthread_t	thread5;
-	pthread_t	thread6;
-	pthread_t	thread7;
-	pthread_t	thread8;
-}				t_block;
 
 typedef struct	s_color
 {
@@ -71,13 +59,14 @@ typedef struct	s_all
 	void			*init;
 	void			*win;
 	void			*image_ptr;
-	char			*image_string;
+	char			*im_s;
 	ptr2func  		*ptrColor;
-	int				indexColor;
+	int				iColor;
 	t_fract			*fract;
 	int				index_thread;
 }				t_all;
 
+void	calc_mandelbrot(t_fract *fract);
 void	manage_mandelbrot(t_all *all);
 void    first_color(char *image_string, double count, double x, double y);
 void    second_color(char *image_string, double count, double x, double y);
@@ -91,9 +80,9 @@ void	unzoom(t_all *all, int x, int y);
 ptr2func	*makeTab(void);
 void	copy_struct(t_fract *origin, t_fract *copy);
 double	ft_condi(double min, double max);
-void    *mandelbrot5(void *ptr);
-void    *mandelbrot6(void *ptr);
-void    *mandelbrot7(void *ptr);
-void    *mandelbrot8(void *ptr);
+void    mandelbrot5(void *ptr);
+void    mandelbrot6(void *ptr);
+void    mandelbrot7(void *ptr);
+void    mandelbrot8(void *ptr);
 
 #endif
