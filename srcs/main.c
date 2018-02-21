@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 23:22:49 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/21 23:19:19 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,12 +22,12 @@ void	init_mlx(t_all *all)
 	all->init = mlx_init();
 	all->win = mlx_new_window(all->init, WIDTH, HEIGHT, "fract-ol");
 	all->image_ptr = mlx_new_image(all->init, WIDTH, HEIGHT);
-	all->image_string = mlx_get_data_addr(all->image_ptr, &bpp, &s_l, &endian); 
+	all->im_s = mlx_get_data_addr(all->image_ptr, &bpp, &s_l, &endian); 
 }
 
 void	init_fract(t_all *all)
 {
-	all->indexColor = 0;
+	all->iColor = 0;
 	all->fract = (t_fract*)malloc(sizeof(t_fract));
 	all->fract->minX = -2;
     all->fract->maxX = 2;
@@ -43,7 +43,7 @@ int	main(void)
 	init_mlx(all);
 	init_fract(all);
 	all->ptrColor = makeTab();
-	mlx_put_image_to_window(all->image_string, all->win, all->image_ptr, 0, 0);
+	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 	mlx_mouse_hook(all->win, mouse_func, all);
 	mlx_key_hook(all->win, key_func, all);
 	mlx_loop(all->init);
