@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/16 18:27:27 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/16 18:59:47 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/21 23:37:19 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,15 +42,10 @@ void	mandelbrot5(void *ptr)
 			f.count = -1;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
-				f.z_i = (f.z_r + f.z_i) * (f.z_r + f.z_i) - f.z_rsqr - f.z_isqr;
-				f.z_i += f.c_i;
-				f.z_r = f.z_rsqr - f.z_isqr + f.c_r;
-				f.z_rsqr = f.z_r * f.z_r;
-				f.z_isqr = f.z_i * f.z_i;
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
+				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
@@ -75,15 +70,10 @@ void	mandelbrot6(void *ptr)
 			f.count = -1;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
-				f.z_i = (f.z_r + f.z_i) * (f.z_r + f.z_i) - f.z_rsqr - f.z_isqr;
-				f.z_i += f.c_i;
-				f.z_r = f.z_rsqr - f.z_isqr + f.c_r;
-				f.z_rsqr = f.z_r * f.z_r;
-				f.z_isqr = f.z_i * f.z_i;
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
+				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
@@ -108,15 +98,10 @@ void	mandelbrot7(void *ptr)
 			f.count = -1;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
-				f.z_i = (f.z_r + f.z_i) * (f.z_r + f.z_i) - f.z_rsqr - f.z_isqr;
-				f.z_i += f.c_i;
-				f.z_r = f.z_rsqr - f.z_isqr + f.c_r;
-				f.z_rsqr = f.z_r * f.z_r;
-				f.z_isqr = f.z_i * f.z_i;
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
+				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
@@ -141,15 +126,10 @@ void	mandelbrot8(void *ptr)
 			f.z_i = 0;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
-				f.z_i = (f.z_r + f.z_i) * (f.z_r + f.z_i) - f.z_rsqr - f.z_isqr;
-				f.z_i += f.c_i;
-				f.z_r = f.z_rsqr - f.z_isqr + f.c_r;
-				f.z_rsqr = f.z_r * f.z_r;
-				f.z_isqr = f.z_i * f.z_i;
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
+				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:09:31 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/16 18:55:39 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/21 23:43:50 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,7 +29,7 @@ void	first_color(char *image_string, double count, double x, double y)
 	
 	
 	}
-	if (count == 80)
+	if (count == 101)
 	{
 		color.blue = 0;
 		color.green = 0;
@@ -57,7 +57,7 @@ void	second_color(char *image_string, double count, double x, double y)
 		color.blue += (z * count);
 	if (count == 2)
 		color.green = 200;
-	if (count == 80)
+	if (count == 101)
 	{
 		color.red = 0;
 		color.green = 0;
@@ -71,13 +71,13 @@ void	third_color(char *image_string, double count, double x, double y)
 	t_color color;
 	double z;
 
-	color.red = 30;
+	color.red = 0;
 	color.green = 225;
 	color.blue = 30;
-	z = count * (255 / 15);
+	z = count * (255 / 100);
 	color.blue += (z * count) * 2;
 	color.red += (z * count);
-	if (count == 80)
+	if (count == 101)
 	{
 		color.red = 0;
 		color.green = 0;

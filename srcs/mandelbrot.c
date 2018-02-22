@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:50 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/16 19:05:08 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/21 23:37:09 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,11 +33,10 @@ void	mandelbrot1(void *ptr)
 			f.count = -1;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
 				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
@@ -62,11 +61,10 @@ void	mandelbrot2(void *ptr)
 			f.count = -1;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
 				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
@@ -91,11 +89,10 @@ void	mandelbrot3(void *ptr)
 			f.count = -1;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
 				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
@@ -120,11 +117,10 @@ void	mandelbrot4(void *ptr)
 			f.z_i = 0;
 			f.z_rsqr = 0;
 			f.z_isqr = 0;
-			while (++f.count <= 80 && f.z_rsqr + f.z_isqr <= 4)
-			{
+			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
 				calc_mandelbrot(&f);
+			if (f.count <= 100)
 				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
-			}
 		}
 	}
 }
