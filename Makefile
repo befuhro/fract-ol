@@ -14,16 +14,16 @@ OBJ_PATH =		objs/
 OBJ_NAME = 		$(SRC_NAME:.c=.o)
 OBJ =			$(addprefix $(OBJ_PATH),$(OBJ_NAME))
 
-INC = 			-I include -I libft -I minilibx
+INC = 			-I include -I libft -I minilibx_macos
 
 LDLIBS = 		-lft
 LDFLAGS = 		-L libft
 LIBFT_PATH = 	libft/
 LIBFT = 		$(LIBFT_PATH)libft.a
 
-MLXFLAGS = 		-L minilibx
+MLXFLAGS = 		-L minilibx_macos
 MLXLIBS = 		-lmlx -framework OpenGL -framework AppKit
-MLX_PATH = 		minilibx/
+MLX_PATH = 		minilibx_macos/
 MLX = 			$(MLX_PATH)libmlx.a
 
 CC = 			clang
