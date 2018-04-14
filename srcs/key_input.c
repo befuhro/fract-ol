@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/21 23:35:54 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/20 18:22:22 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,6 +58,14 @@ void	reinit(t_all *all)
 	refresh_window(all);
 }
 
+void	change_fract(t_all *all)
+{
+	all->ifract++;
+	if (all->ifract == 2)
+		all->ifract = 0;
+	refresh_window(all);
+}
+
 int		key_func(int keycode, t_all *all)
 {
 	if (keycode >= 123 && keycode <= 126)
@@ -66,6 +74,8 @@ int		key_func(int keycode, t_all *all)
 		quit(all);
 	if (keycode == 15)
 		reinit(all);
-	printf("keycode = %i\n", keycode);
+	if (keycode == 49)
+		change_fract(all);
+	//printf("keycode = %i\n", keycode);
 	return (0);
 }

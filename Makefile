@@ -1,7 +1,9 @@
 SRC_PATH = 		srcs/
 SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
 SRC_NAME +=		color.c 
-SRC_NAME +=		fill_pixel.c 
+SRC_NAME +=		conversion.c 
+SRC_NAME +=		fill_pixel.c
+SRC_NAME +=		julia.c
 SRC_NAME +=		key_input.c 
 SRC_NAME +=		main.c 
 SRC_NAME +=		manage_func.c 
@@ -39,7 +41,7 @@ $(NAME): $(MLX) $(LIBFT) $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	mkdir -p objs
-	$(CC) $(CFLAGS) $(INC) $(CPPFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(INC)  -o $@ -c $<
 
 $(MLX):
 	make -C $(MLX_PATH)
@@ -54,7 +56,6 @@ clean:
 
 fclean: clean
 	rm -fv $(NAME)
-#	@make -C $(MLX_PATH) fclean
 	@make -C $(LIBFT_PATH) fclean
 
 re: fclean all
