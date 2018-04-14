@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/14 21:07:41 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/14 23:27:01 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -91,6 +91,10 @@ void		zoom(t_all *all, int x, int y);
 void		unzoom(t_all *all, int x, int y);
 ptrcolor	*initcolor(void);
 ptrfract 	*initfract();
+void   		mandelbrot1(void *ptr);
+void   		mandelbrot2(void *ptr);
+void   		mandelbrot3(void *ptr);
+void   		mandelbrot4(void *ptr);
 void   		mandelbrot5(void *ptr);
 void   		mandelbrot6(void *ptr);
 void   		mandelbrot7(void *ptr);

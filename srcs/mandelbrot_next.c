@@ -6,20 +6,20 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/16 18:27:27 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/21 23:37:19 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/14 23:27:18 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
 
-void	calc_mandelbrot(t_fract *f)
+void	calc_mandelbrot(t_comp *c, t_comp *z, t_comp *sqrz)
 {
-	f->z_i = (f->z_r + f->z_i) * (f->z_r + f->z_i) - f->z_rsqr - f->z_isqr;
-	f->z_i += f->c_i;
-	f->z_r = f->z_rsqr - f->z_isqr + f->c_r;
-	f->z_rsqr = f->z_r * f->z_r;
-	f->z_isqr = f->z_i * f->z_i;
+	z->im = (z->re + z->im) * (z->re + z->im) - sqrz->re - sqrz->im;
+	z->im += c->im;
+	z->re = sqrz->re - sqrz->im + c->re;
+	sqrz->re = z->re * z->re;
+	sqrz->im = z->im * z->im;
 }
 
 void	mandelbrot5(void *ptr)
@@ -35,17 +35,16 @@ void	mandelbrot5(void *ptr)
 		f.x = -1;
 		while (++f.x < WIDTH)
 		{
-			f.c_r = f.minX + (f.maxX - f.minX) / WIDTH * f.x;
-			f.c_i = f.minY + (f.maxY - f.minY) / HEIGHT * f.y;
-			f.z_r = 0;
-			f.z_i = 0;
 			f.count = -1;
-			f.z_rsqr = 0;
-			f.z_isqr = 0;
-			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
-				calc_mandelbrot(&f);
-			if (f.count <= 100)
-				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
+			conv(f.x, f.y, &f.c, f);
+			f.z.re = 0;
+			f.z.im = 0;
+			f.sqrz.re = 0;
+			f.sqrz.im = 0;
+			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
+				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+			if (f.count <= ITMAX)
+				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -63,17 +62,16 @@ void	mandelbrot6(void *ptr)
 		f.x = -1;
 		while (++f.x < WIDTH)
 		{
-			f.c_r = f.minX + (f.maxX - f.minX) / WIDTH * f.x;
-			f.c_i = f.minY + (f.maxY - f.minY) / HEIGHT * f.y;
-			f.z_r = 0;
-			f.z_i = 0;
 			f.count = -1;
-			f.z_rsqr = 0;
-			f.z_isqr = 0;
-			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
-				calc_mandelbrot(&f);
-			if (f.count <= 100)
-				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
+			conv(f.x, f.y, &f.c, f);
+			f.z.re = 0;
+			f.z.im = 0;
+			f.sqrz.re = 0;
+			f.sqrz.im = 0;
+			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
+				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+			if (f.count <= ITMAX)
+				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -91,17 +89,16 @@ void	mandelbrot7(void *ptr)
 		f.x = -1;
 		while (++f.x < WIDTH)
 		{
-			f.c_r = f.minX + (f.maxX - f.minX) / WIDTH * f.x;
-			f.c_i = f.minY + (f.maxY - f.minY) / HEIGHT * f.y;
-			f.z_r = 0;
-			f.z_i = 0;
 			f.count = -1;
-			f.z_rsqr = 0;
-			f.z_isqr = 0;
-			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
-				calc_mandelbrot(&f);
-			if (f.count <= 100)
-				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
+			conv(f.x, f.y, &f.c, f);
+			f.z.re = 0;
+			f.z.im = 0;
+			f.sqrz.re = 0;
+			f.sqrz.im = 0;
+			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
+				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+			if (f.count <= ITMAX)
+				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -120,16 +117,15 @@ void	mandelbrot8(void *ptr)
 		while (++f.x < WIDTH)
 		{
 			f.count = -1;
-			f.c_r = f.minX + (f.maxX - f.minX) / WIDTH * f.x;
-			f.c_i = f.minY + (f.maxY - f.minY) / HEIGHT * f.y;
-			f.z_r = 0;
-			f.z_i = 0;
-			f.z_rsqr = 0;
-			f.z_isqr = 0;
-			while (++f.count <= 100 && f.z_rsqr + f.z_isqr <= 4)
-				calc_mandelbrot(&f);
-			if (f.count <= 100)
-				ref->ptrColor[ref->iColor](ref->im_s, f.count, f.x, f.y);
+			conv(f.x, f.y, &f.c, f);
+			f.z.re = 0;
+			f.z.im = 0;
+			f.sqrz.re = 0;
+			f.sqrz.im = 0;
+			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
+				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+			if (f.count <= ITMAX)
+				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
