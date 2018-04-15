@@ -26,17 +26,11 @@ void	julia(t_all *ptr)
 		while (++f.x < WIDTH)
 		{
 			f.count = -1;
-			conv(f.x, f.y, &f.c, f);
-//			f.c.re = -0.038088;
-//			f.c.im = 0.97;
-
-
-			f.z.re = 0;
-			f.z.im = 0;
-//			conv(f.x, f.y, &f.z, f);	
-
-			f.sqrz.re = 0;
-			f.sqrz.im = 0;
+			f.c.re = f.mouse.re;
+			f.c.im = f.mouse.im;
+			conv(f.x, f.y, &f.z, f);	
+			f.sqrz.re = f.z.re * f.z.re;
+			f.sqrz.im = f.z.im * f.z.im;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_julia(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
