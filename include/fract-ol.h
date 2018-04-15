@@ -54,13 +54,7 @@ typedef	struct	s_fract
 	t_comp	c;
 	t_comp	z;
 	t_comp	sqrz;
-
-	double	c_r;
-	double	c_i;
-	double	z_r;
-	double	z_i;
-	double	z_rsqr;
-	double	z_isqr;
+	t_comp	mouse;
 	int		count;
 }			t_fract;
 
