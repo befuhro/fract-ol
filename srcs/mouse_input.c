@@ -37,6 +37,7 @@ void	refresh_window(t_all *all)
 int 	mouse_func(int mousecode, int x, int y, t_all *all)
 {
 	//	printf("%i\n%i\n%i\n", mousecode, x, y);
+	conv(x, y, &all->fract->mouse, *all->fract);
 	if (mousecode == 1)
 		all->icolor++;
 	if (mousecode == 2)
