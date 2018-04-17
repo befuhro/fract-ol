@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 22:44:50 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/17 22:56:11 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,7 +50,7 @@ typedef	struct	s_fract
 	double	maxY;
 	double	x;
 	double	y;
-
+	int		pause;
 	t_comp	c;
 	t_comp	z;
 	t_comp	sqrz;
