@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/16 18:00:07 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/17 22:44:50 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -71,7 +71,9 @@ typedef struct	s_all
 	t_fract			*fract;
 }				t_all;
 
+int			refresh_julia(int x, int y, t_all *all);
 void		calc_mandelbrot(t_comp *c, t_comp *z, t_comp *sqrz);
+void		calc_julia(t_comp *c, t_comp *z, t_comp *sqrz);
 void		manage_mandelbrot(t_all *all);
 void		manage_julia(t_all *all);
 void   		eclipse(char *image_string, double count, double x, double y);
@@ -85,6 +87,13 @@ void		zoom(t_all *all, int x, int y);
 void		unzoom(t_all *all, int x, int y);
 ptrcolor	*initcolor(void);
 ptrfract 	*initfract();
+void   		julia1(void *ptr);
+void   		julia2(void *ptr);
+void   		julia3(void *ptr);
+void   		julia4(void *ptr);
+void   		julia6(void *ptr);
+void   		julia7(void *ptr);
+void   		julia8(void *ptr);
 void   		mandelbrot1(void *ptr);
 void   		mandelbrot2(void *ptr);
 void   		mandelbrot3(void *ptr);

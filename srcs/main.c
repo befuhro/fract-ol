@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/15 18:21:11 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/17 22:44:41 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,9 +40,12 @@ void	gestion(t_all *all, char *s)
 	all->fract->maxY = 1.25;
 	all->ptrcolor = initcolor();
 	all->ptrfract = initfract();
+	all->fract->pause = 0;
 	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 	mlx_mouse_hook(all->win, mouse_func, all);
 	mlx_key_hook(all->win, key_func, all);
+	if (all->ifract == 1)
+		mlx_hook(all->win, 6, 1L << 6, refresh_julia, all);
 	mlx_loop(all->init);
 }
 

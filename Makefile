@@ -4,11 +4,12 @@ SRC_NAME +=		color.c
 SRC_NAME +=		conversion.c 
 SRC_NAME +=		fill_pixel.c
 SRC_NAME +=		julia.c
+SRC_NAME +=		julia_next.c
 SRC_NAME +=		key_input.c 
 SRC_NAME +=		main.c 
 SRC_NAME +=		manage_func.c 
 SRC_NAME +=		mandelbrot.c 
-#SRC_NAME +=		mandelbrot_next.c 
+SRC_NAME +=		mandelbrot_next.c 
 SRC_NAME +=		mouse_input.c 
 SRC_NAME +=		zoom.c 
 

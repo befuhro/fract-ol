@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/03/20 18:22:22 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/17 22:43:57 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -46,7 +46,6 @@ void	move(t_all *all, int keycode)
 		all->fract->minY += ratio / 100;
 		all->fract->maxY += ratio / 100;
 	}
-	refresh_window(all);
 }
 
 void	reinit(t_all *all)
@@ -55,7 +54,6 @@ void	reinit(t_all *all)
 	all->fract->maxX = 2;
 	all->fract->minY = -1.25;
 	all->fract->maxY = 1.25;
-	refresh_window(all);
 }
 
 void	change_fract(t_all *all)
@@ -63,7 +61,6 @@ void	change_fract(t_all *all)
 	all->ifract++;
 	if (all->ifract == 2)
 		all->ifract = 0;
-	refresh_window(all);
 }
 
 int		key_func(int keycode, t_all *all)
@@ -76,6 +73,15 @@ int		key_func(int keycode, t_all *all)
 		reinit(all);
 	if (keycode == 49)
 		change_fract(all);
-	//printf("keycode = %i\n", keycode);
+	if (keycode == 37)
+	{
+		if (all->fract->pause == 0)
+			all->fract->pause = 1;
+		else
+			all->fract->pause = 0;
+	}
+	refresh_window(all);
+	printf("keycode = %i\n", keycode);
+	printf("pause = %i\n", all->fract->pause);
 	return (0);
 }

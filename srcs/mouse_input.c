@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:02:57 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/15 18:21:12 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/17 20:11:15 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,6 +30,19 @@ void	refresh_window(t_all *all)
 	all->im_s = mlx_get_data_addr(all->image_ptr, &bpp, &s_l, &endian);
 	all->ptrfract[all->ifract](all);
 	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
+}
+
+int		c_julia(int mousecode, int x, int y, t_all *all)
+{
+	conv(x, y, &all->fract->mouse, *all->fract);
+	return (mousecode);
+}
+
+int		refresh_julia(int x, int y, t_all *all)
+{
+	conv(x, y, &all->fract->mouse, *all->fract);
+	refresh_window(all);
+	return (0);
 }
 
 int 	mouse_func(int mousecode, int x, int y, t_all *all)
