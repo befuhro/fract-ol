@@ -1,5 +1,7 @@
 SRC_PATH = 		srcs/
 SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
+SRC_NAME +=		burningship.c 
+SRC_NAME +=		burningship_next.c 
 SRC_NAME +=		color.c 
 SRC_NAME +=		conversion.c 
 SRC_NAME +=		fill_pixel.c

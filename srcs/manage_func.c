@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 04:42:33 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 22:33:45 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 15:00:26 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,8 +28,9 @@ ptrfract	*initfract(void)
 {
 	ptrfract	*ptr;
 
-	ptr = (ptrfract*)malloc(sizeof(ptrfract) * 2);
+	ptr = (ptrfract*)malloc(sizeof(ptrfract) * 3);
 	ptr[0] = &manage_mandelbrot;
 	ptr[1] = &manage_julia;
+	ptr[2] = &manage_burningship;
 	return (ptr);
 }

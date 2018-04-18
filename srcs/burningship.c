@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   mandelbrot_next.c                                .::    .:/ .      .::   */
+/*   burningship.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/02/16 18:27:27 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 14:51:16 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/18 13:55:02 by befuhro      #+#   ##    ##    #+#       */
+/*   Updated: 2018/04/18 15:05:15 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
 
-void	mandelbrot5(void *ptr)
+void	calc_burningship(t_comp *c, t_comp *z, t_comp *sqrz)
+{
+	z->im = (z->re + z->im) * (z->re + z->im) - sqrz->re - sqrz->im;
+	z->im += c->im;
+	if (z->im < 0)
+		z->im = -z->im;
+	z->re = sqrz->re - sqrz->im + c->re;
+	if (z->re < 0)
+		z->re = -z->re;
+	sqrz->re = z->re * z->re;
+	sqrz->im = z->im * z->im;
+}
+
+void	burningship1(void *ptr)
 {
 	t_fract	f;
 	t_all	*ref;
 
 	ref = ptr;
 	ft_memcpy(&f, ref->fract, sizeof(t_fract));
-	f.y = 359;
-	while (++f.y < 450)
+	f.y = -1;
+	while (++f.y < 90)
 	{
 		f.x = -1;
 		while (++f.x < WIDTH)
@@ -33,22 +46,22 @@ void	mandelbrot5(void *ptr)
 			f.sqrz.re = 0;
 			f.sqrz.im = 0;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
-				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
 				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
 
-void	mandelbrot6(void *ptr)
+void	burningship2(void *ptr)
 {
 	t_fract	f;
 	t_all	*ref;
 
 	ref = ptr;
 	ft_memcpy(&f, ref->fract, sizeof(t_fract));
-	f.y = 449;
-	while (++f.y < 540)
+	f.y = 89;
+	while (++f.y < 180)
 	{
 		f.x = -1;
 		while (++f.x < WIDTH)
@@ -60,22 +73,23 @@ void	mandelbrot6(void *ptr)
 			f.sqrz.re = 0;
 			f.sqrz.im = 0;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
-				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
 				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
 
-void	mandelbrot7(void *ptr)
+
+void	burningship3(void *ptr)
 {
 	t_fract	f;
 	t_all	*ref;
 
 	ref = ptr;
 	ft_memcpy(&f, ref->fract, sizeof(t_fract));
-	f.y = 539;
-	while (++f.y < 630)
+	f.y = 179;
+	while (++f.y < 270)
 	{
 		f.x = -1;
 		while (++f.x < WIDTH)
@@ -87,22 +101,23 @@ void	mandelbrot7(void *ptr)
 			f.sqrz.re = 0;
 			f.sqrz.im = 0;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
-				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
 				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
 
-void	mandelbrot8(void *ptr)
+
+void	burningship4(void *ptr)
 {
 	t_fract	f;
 	t_all	*ref;
 
 	ref = ptr;
 	ft_memcpy(&f, ref->fract, sizeof(t_fract));
-	f.y = 629;
-	while (++f.y < 720)
+	f.y = 269;
+	while (++f.y < 360)
 	{
 		f.x = -1;
 		while (++f.x < WIDTH)
@@ -114,31 +129,9 @@ void	mandelbrot8(void *ptr)
 			f.sqrz.re = 0;
 			f.sqrz.im = 0;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
-				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
+				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
 				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
-}
-
-void	manage_mandelbrot(t_all *all)
-{
-	pthread_t	block[8];
-
-	pthread_create(&block[0], NULL, (void*)mandelbrot1, (void*)all);
-	pthread_create(&block[1], NULL, (void*)mandelbrot2, (void*)all);
-	pthread_create(&block[2], NULL, (void*)mandelbrot3, (void*)all);
-	pthread_create(&block[3], NULL, (void*)mandelbrot4, (void*)all);
-	pthread_create(&block[4], NULL, (void*)mandelbrot5, (void*)all);
-	pthread_create(&block[5], NULL, (void*)mandelbrot6, (void*)all);
-	pthread_create(&block[6], NULL, (void*)mandelbrot7, (void*)all);
-	pthread_create(&block[7], NULL, (void*)mandelbrot8, (void*)all);
-	pthread_join(block[0], NULL);
-	pthread_join(block[1], NULL);
-	pthread_join(block[2], NULL);
-	pthread_join(block[3], NULL);
-	pthread_join(block[4], NULL);
-	pthread_join(block[5], NULL);
-	pthread_join(block[6], NULL);
-	pthread_join(block[7], NULL);
 }

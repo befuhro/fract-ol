@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:02:57 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 20:11:15 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 12:31:29 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,15 +40,17 @@ int		c_julia(int mousecode, int x, int y, t_all *all)
 
 int		refresh_julia(int x, int y, t_all *all)
 {
-	conv(x, y, &all->fract->mouse, *all->fract);
-	refresh_window(all);
+	if (all->fract->pause == 0)
+	{
+		conv(x, y, &all->fract->mouse, *all->fract);
+		refresh_window(all);
+	}
 	return (0);
 }
 
 int 	mouse_func(int mousecode, int x, int y, t_all *all)
 {
 	//	printf("%i\n%i\n%i\n", mousecode, x, y);
-	conv(x, y, &all->fract->mouse, *all->fract);
 	if (mousecode == 1)
 		all->icolor++;
 	if (mousecode == 2)

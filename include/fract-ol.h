@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 22:56:11 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 14:44:14 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -74,8 +74,10 @@ typedef struct	s_all
 int			refresh_julia(int x, int y, t_all *all);
 void		calc_mandelbrot(t_comp *c, t_comp *z, t_comp *sqrz);
 void		calc_julia(t_comp *c, t_comp *z, t_comp *sqrz);
+void		calc_burningship(t_comp *c, t_comp *z, t_comp *sqrz);
 void		manage_mandelbrot(t_all *all);
 void		manage_julia(t_all *all);
+void		manage_burningship(t_all *all);
 void   		eclipse(char *image_string, double count, double x, double y);
 void   		strange(char *image_string, double count, double x, double y);
 void   		royal(char *image_string, double count, double x, double y);
@@ -87,6 +89,14 @@ void		zoom(t_all *all, int x, int y);
 void		unzoom(t_all *all, int x, int y);
 ptrcolor	*initcolor(void);
 ptrfract 	*initfract();
+void   		burningship1(void *ptr);
+void   		burningship2(void *ptr);
+void   		burningship3(void *ptr);
+void   		burningship4(void *ptr);
+void   		burningship5(void *ptr);
+void   		burningship6(void *ptr);
+void   		burningship7(void *ptr);
+void   		burningship8(void *ptr);
 void   		julia1(void *ptr);
 void   		julia2(void *ptr);
 void   		julia3(void *ptr);

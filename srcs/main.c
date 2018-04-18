@@ -6,12 +6,13 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 22:44:41 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 15:04:09 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
+#include <stdio.h>
 
 void	init_all(t_all *all)
 {
@@ -34,6 +35,8 @@ void	gestion(t_all *all, char *s)
 		all->ifract = 0;
 	else if (!ft_strcmp(s, "julia"))
 		all->ifract  = 1;
+	else if (!ft_strcmp(s, "burningship"))
+		all->ifract  = 2;
 	all->fract->minX = -2;
 	all->fract->maxX = 2;
 	all->fract->minY = -1.25;
@@ -44,7 +47,7 @@ void	gestion(t_all *all, char *s)
 	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 	mlx_mouse_hook(all->win, mouse_func, all);
 	mlx_key_hook(all->win, key_func, all);
-	if (all->ifract == 1)
+	if (all->ifract == 1 && all->fract->pause == 0)
 		mlx_hook(all->win, 6, 1L << 6, refresh_julia, all);
 	mlx_loop(all->init);
 }
@@ -54,7 +57,8 @@ int	main(int ac, char **av)
 	t_all	*all;
 
 	if (ac == 2 && (!ft_strcmp(av[1], "mandelbrot")
-		|| !ft_strcmp(av[1], "julia")))
+		|| !ft_strcmp(av[1], "julia")
+		|| !ft_strcmp(av[1], "burningship")))
 	{
 		all = (t_all *) malloc(sizeof(t_all));
 		init_all(all);

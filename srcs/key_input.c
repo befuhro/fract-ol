@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 22:43:57 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 15:04:12 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -82,6 +82,5 @@ int		key_func(int keycode, t_all *all)
 	}
 	refresh_window(all);
 	printf("keycode = %i\n", keycode);
-	printf("pause = %i\n", all->fract->pause);
 	return (0);
 }
