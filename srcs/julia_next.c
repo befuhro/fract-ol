@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 15:04:33 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:04:42 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 15:21:12 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -101,7 +101,7 @@ void	julia8(void *ptr)
 
 	ref = ptr;
 	ft_memcpy(&f, ref->fract, sizeof(t_fract));
-	f.y = -1;
+	f.y = 629;
 	while (++f.y < 720)
 	{
 		f.x = -1;
