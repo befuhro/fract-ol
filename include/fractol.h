@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 16:11:53 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 17:32:12 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,6 @@
 
 # define FRACTOL_H
 
-# include <fcntl.h>
 # include "mlx.h"
 # include <stdlib.h>
 # include "libft.h"
