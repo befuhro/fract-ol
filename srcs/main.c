@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:54:28 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 15:38:02 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	init_all(t_all *all)
 {
@@ -35,10 +35,10 @@ void	gestion(t_all *all, char *s)
 		all->ifract = 1;
 	else if (!ft_strcmp(s, "burningship"))
 		all->ifract = 2;
-	all->fract->minX = -2;
-	all->fract->maxX = 2;
-	all->fract->minY = -1.25;
-	all->fract->maxY = 1.25;
+	all->fract->minx = -2;
+	all->fract->maxx = 2;
+	all->fract->miny = -1.25;
+	all->fract->maxy = 1.25;
 	all->ptrcolor = initcolor();
 	all->ptrfract = initfract();
 	all->fract->pause = 0;

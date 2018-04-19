@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 12:04:46 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 15:00:52 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	quit(t_all *all)
 {
@@ -27,35 +27,35 @@ void	move(t_all *all, int keycode)
 {
 	double	ratio;
 
-	ratio = (all->fract->maxX - all->fract->minX) * (100 / 5.2);
+	ratio = (all->fract->maxx - all->fract->minx) * (100 / 5.2);
 	if (keycode == 124)
 	{
-		all->fract->minX += ratio / 100;
-		all->fract->maxX += ratio / 100;
+		all->fract->minx += ratio / 100;
+		all->fract->maxx += ratio / 100;
 	}
 	else if (keycode == 123)
 	{
-		all->fract->minX -= ratio / 100;
-		all->fract->maxX -= ratio / 100;
+		all->fract->minx -= ratio / 100;
+		all->fract->maxx -= ratio / 100;
 	}
 	else if (keycode == 126)
 	{
-		all->fract->minY -= ratio / 100;
-		all->fract->maxY -= ratio / 100;
+		all->fract->miny -= ratio / 100;
+		all->fract->maxy -= ratio / 100;
 	}
 	else if (keycode == 125)
 	{
-		all->fract->minY += ratio / 100;
-		all->fract->maxY += ratio / 100;
+		all->fract->miny += ratio / 100;
+		all->fract->maxy += ratio / 100;
 	}
 }
 
 void	reinit(t_all *all)
 {
-	all->fract->minX = -2;
-	all->fract->maxX = 2;
-	all->fract->minY = -1.25;
-	all->fract->maxY = 1.25;
+	all->fract->minx = -2;
+	all->fract->maxx = 2;
+	all->fract->miny = -1.25;
+	all->fract->maxy = 1.25;
 }
 
 void	change_fract(t_all *all)
@@ -82,5 +82,6 @@ int		key_func(int keycode, t_all *all)
 		else
 			all->fract->pause = 0;
 	}
+	refresh_window(all);
 	return (0);
 }

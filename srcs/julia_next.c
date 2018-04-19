@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 15:04:33 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:56:46 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:54:22 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	julia5(void *ptr)
 {

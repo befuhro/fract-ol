@@ -6,13 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:02:57 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:55:28 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:55:13 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
-#include <stdio.h>
+#include "fractol.h"
 
 void	refresh_window(t_all *all)
 {

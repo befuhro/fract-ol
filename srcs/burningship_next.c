@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 13:55:02 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:53:18 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:53:32 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	burningship5(void *ptr)
 {

@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/16 18:27:27 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 14:51:16 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:55:01 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	mandelbrot5(void *ptr)
 {

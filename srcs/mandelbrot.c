@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:50 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/17 22:32:14 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:54:55 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	calc_mandelbrot(t_comp *c, t_comp *z, t_comp *sqrz)
 {

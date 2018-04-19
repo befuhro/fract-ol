@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:09:31 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/16 18:09:08 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:53:42 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	eclipse(char *image_string, double count, double x, double y)
 {

@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/15 15:00:25 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:55:00 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:54:13 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	calc_julia(t_comp *c, t_comp *z, t_comp *sqrz)
 {

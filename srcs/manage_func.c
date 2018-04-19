@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 04:42:33 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:53:44 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 15:31:36 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 ptrcolor	*initcolor(void)
 {

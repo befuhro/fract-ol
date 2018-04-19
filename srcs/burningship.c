@@ -6,12 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 13:55:02 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 11:52:13 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 14:53:17 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fractol.h"
 
 void	calc_burningship(t_comp *c, t_comp *z, t_comp *sqrz)
 {
