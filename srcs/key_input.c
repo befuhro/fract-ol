@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 15:00:52 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:09:33 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,8 +17,8 @@ void	quit(t_all *all)
 {
 	mlx_destroy_image(all->init, all->image_ptr);
 	mlx_destroy_window(all->init, all->win);
-	free(all->ptrcolor);
-	free(all->ptrfract);
+	free(all->t_ptrcolor);
+	free(all->t_ptrfract);
 	free(all->fract);
 	exit(0);
 }

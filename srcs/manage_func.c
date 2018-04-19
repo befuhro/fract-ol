@@ -6,29 +6,29 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 04:42:33 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 15:31:36 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:10:32 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-ptrcolor	*initcolor(void)
+t_ptrcolor	*initcolor(void)
 {
-	ptrcolor	*ptr;
+	t_ptrcolor	*ptr;
 
-	ptr = (ptrcolor*)malloc(sizeof(ptrcolor) * 3);
+	ptr = (t_ptrcolor*)malloc(sizeof(t_ptrcolor) * 3);
 	ptr[0] = &eclipse;
 	ptr[1] = &strange;
 	ptr[2] = &royal;
 	return (ptr);
 }
 
-ptrfract	*initfract(void)
+t_ptrfract	*initfract(void)
 {
-	ptrfract	*ptr;
+	t_ptrfract	*ptr;
 
-	ptr = (ptrfract*)malloc(sizeof(ptrfract) * 3);
+	ptr = (t_ptrfract*)malloc(sizeof(t_ptrfract) * 3);
 	ptr[0] = &manage_mandelbrot;
 	ptr[1] = &manage_julia;
 	ptr[2] = &manage_burningship;

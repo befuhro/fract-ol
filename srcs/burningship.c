@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 13:55:02 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 14:53:17 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:07:19 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -48,7 +48,7 @@ void	burningship1(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -75,7 +75,7 @@ void	burningship2(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -102,7 +102,7 @@ void	burningship3(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -129,7 +129,7 @@ void	burningship4(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_burningship(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }

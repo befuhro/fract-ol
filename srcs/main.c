@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 15:38:02 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:09:56 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,8 +39,8 @@ void	gestion(t_all *all, char *s)
 	all->fract->maxx = 2;
 	all->fract->miny = -1.25;
 	all->fract->maxy = 1.25;
-	all->ptrcolor = initcolor();
-	all->ptrfract = initfract();
+	all->t_ptrcolor = initcolor();
+	all->t_ptrfract = initfract();
 	all->fract->pause = 0;
 	mlx_mouse_hook(all->win, mouse_func, all);
 	mlx_key_hook(all->win, key_func, all);

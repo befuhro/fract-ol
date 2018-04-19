@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 15:46:27 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:11:53 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -60,15 +60,15 @@ typedef struct		s_all
 	void			*win;
 	void			*image_ptr;
 	char			*im_s;
-	void			(**ptrcolor)(char *a, double b, double c, double e);
-	void			(**ptrfract)(struct s_all *all);
+	void			(**t_ptrcolor)(char *a, double b, double c, double e);
+	void			(**t_ptrfract)(struct s_all *all);
 	int				icolor;
 	int				ifract;
 	t_fract			*fract;
 }					t_all;
 
-typedef	void		(*ptrfract)(t_all *all);
-typedef	void		(*ptrcolor)(char *a, double b, double c, double d);
+typedef void		(*t_ptrfract) (t_all *all);
+typedef void		(*t_ptrcolor) (char*, double, double, double);
 
 int					refresh_julia(int x, int y, t_all *all);
 void				calc_mandelbrot(t_comp *c, t_comp *z, t_comp *sqrz);
@@ -88,8 +88,8 @@ int					key_func(int keycode, t_all *all);
 void				refresh_window(t_all *all);
 void				zoom(t_all *all, int x, int y);
 void				unzoom(t_all *all, int x, int y);
-ptrcolor			*initcolor(void);
-ptrfract			*initfract(void);
+t_ptrcolor			*initcolor(void);
+t_ptrfract			*initfract(void);
 void				burningship1(void *ptr);
 void				burningship2(void *ptr);
 void				burningship3(void *ptr);

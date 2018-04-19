@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/16 18:27:27 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 14:55:01 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:08:17 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,7 +35,7 @@ void	mandelbrot5(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -62,7 +62,7 @@ void	mandelbrot6(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -89,7 +89,7 @@ void	mandelbrot7(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -116,7 +116,7 @@ void	mandelbrot8(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_mandelbrot(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:02:57 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 14:55:13 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:10:42 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,7 +27,7 @@ void	refresh_window(t_all *all)
 	mlx_destroy_image(all->init, all->image_ptr);
 	all->image_ptr = mlx_new_image(all->init, WIDTH, HEIGHT);
 	all->im_s = mlx_get_data_addr(all->image_ptr, &bpp, &s_l, &endian);
-	all->ptrfract[all->ifract](all);
+	all->t_ptrfract[all->ifract](all);
 	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 }
 

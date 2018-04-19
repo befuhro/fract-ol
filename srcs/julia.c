@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/15 15:00:25 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 14:54:13 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 16:07:52 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -44,7 +44,7 @@ void	julia1(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_julia(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -71,7 +71,7 @@ void	julia2(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_julia(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -98,7 +98,7 @@ void	julia3(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_julia(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
@@ -125,7 +125,7 @@ void	julia4(void *ptr)
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
 				calc_julia(&f.c, &f.z, &f.sqrz);
 			if (f.count <= ITMAX)
-				ref->ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
+				ref->t_ptrcolor[ref->icolor](ref->im_s, f.count, f.x, f.y);
 		}
 	}
 }
