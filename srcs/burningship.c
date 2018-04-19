@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 13:55:02 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:05:15 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 11:52:13 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -80,7 +80,6 @@ void	burningship2(void *ptr)
 	}
 }
 
-
 void	burningship3(void *ptr)
 {
 	t_fract	f;
@@ -107,7 +106,6 @@ void	burningship3(void *ptr)
 		}
 	}
 }
-
 
 void	burningship4(void *ptr)
 {

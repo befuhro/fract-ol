@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 04:42:33 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:00:26 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 11:53:44 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 
 ptrcolor	*initcolor(void)
 {
-	ptrcolor 	*ptr;
+	ptrcolor	*ptr;
 
 	ptr = (ptrcolor*)malloc(sizeof(ptrcolor) * 3);
 	ptr[0] = &eclipse;

@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 14:44:14 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 12:08:09 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,9 +21,9 @@
 # include "libft.h"
 # include <math.h>
 # include <pthread.h>
-# define	WIDTH	1366
-# define 	HEIGHT	720
-# define	ITMAX	100
+# define		WIDTH	1366
+# define 		HEIGHT	720
+# define		ITMAX	100
 
 typedef struct 	s_all t_all;
 typedef	void	(*ptrcolor)(char *, double, double, double);

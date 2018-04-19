@@ -32,7 +32,7 @@ MLX_PATH = 		minilibx_macos/
 MLX = 			$(MLX_PATH)libmlx.a
 
 CC = 			clang
-CFLAGS = 		-Wall -Wextra -Werror
+CFLAGS = 		-g -Wall -Wextra -Werror
 NAME = 			fract-ol
 
 .PHONY: all clean fclean re

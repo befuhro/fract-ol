@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/18 13:55:02 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:04:57 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 11:53:18 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,7 +40,6 @@ void	burningship5(void *ptr)
 	}
 }
 
-
 void	burningship6(void *ptr)
 {
 	t_fract	f;
@@ -67,7 +66,6 @@ void	burningship6(void *ptr)
 		}
 	}
 }
-
 
 void	burningship7(void *ptr)
 {
@@ -96,7 +94,6 @@ void	burningship7(void *ptr)
 	}
 }
 
-
 void	burningship8(void *ptr)
 {
 	t_fract	f;
@@ -124,7 +121,7 @@ void	burningship8(void *ptr)
 	}
 }
 
-void		manage_burningship(t_all *all)
+void	manage_burningship(t_all *all)
 {
 	pthread_t	block[8];
 

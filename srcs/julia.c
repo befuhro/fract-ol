@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/15 15:00:25 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:19:24 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 11:55:00 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,7 +38,7 @@ void	julia1(void *ptr)
 			f.count = -1;
 			f.c.re = f.mouse.re;
 			f.c.im = f.mouse.im;
-			conv(f.x, f.y, &f.z, f);	
+			conv(f.x, f.y, &f.z, f);
 			f.sqrz.re = f.z.re * f.z.re;
 			f.sqrz.im = f.z.im * f.z.im;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
@@ -65,7 +65,7 @@ void	julia2(void *ptr)
 			f.count = -1;
 			f.c.re = f.mouse.re;
 			f.c.im = f.mouse.im;
-			conv(f.x, f.y, &f.z, f);	
+			conv(f.x, f.y, &f.z, f);
 			f.sqrz.re = f.z.re * f.z.re;
 			f.sqrz.im = f.z.im * f.z.im;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
@@ -92,7 +92,7 @@ void	julia3(void *ptr)
 			f.count = -1;
 			f.c.re = f.mouse.re;
 			f.c.im = f.mouse.im;
-			conv(f.x, f.y, &f.z, f);	
+			conv(f.x, f.y, &f.z, f);
 			f.sqrz.re = f.z.re * f.z.re;
 			f.sqrz.im = f.z.im * f.z.im;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)
@@ -119,7 +119,7 @@ void	julia4(void *ptr)
 			f.count = -1;
 			f.c.re = f.mouse.re;
 			f.c.im = f.mouse.im;
-			conv(f.x, f.y, &f.z, f);	
+			conv(f.x, f.y, &f.z, f);
 			f.sqrz.re = f.z.re * f.z.re;
 			f.sqrz.im = f.z.im * f.z.im;
 			while (++f.count <= ITMAX && f.sqrz.re + f.sqrz.im <= 4)

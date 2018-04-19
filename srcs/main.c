@@ -6,13 +6,12 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:04:09 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 11:54:28 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
-#include <stdio.h>
 
 void	init_all(t_all *all)
 {
@@ -26,7 +25,6 @@ void	init_all(t_all *all)
 	all->im_s = mlx_get_data_addr(all->image_ptr, &bpp, &s_l, &endian);
 	all->icolor = 0;
 	all->fract = (t_fract*)malloc(sizeof(t_fract));
-
 }
 
 void	gestion(t_all *all, char *s)
@@ -34,9 +32,9 @@ void	gestion(t_all *all, char *s)
 	if (!ft_strcmp(s, "mandelbrot"))
 		all->ifract = 0;
 	else if (!ft_strcmp(s, "julia"))
-		all->ifract  = 1;
+		all->ifract = 1;
 	else if (!ft_strcmp(s, "burningship"))
-		all->ifract  = 2;
+		all->ifract = 2;
 	all->fract->minX = -2;
 	all->fract->maxX = 2;
 	all->fract->minY = -1.25;
@@ -44,15 +42,16 @@ void	gestion(t_all *all, char *s)
 	all->ptrcolor = initcolor();
 	all->ptrfract = initfract();
 	all->fract->pause = 0;
-	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 	mlx_mouse_hook(all->win, mouse_func, all);
 	mlx_key_hook(all->win, key_func, all);
 	if (all->ifract == 1 && all->fract->pause == 0)
 		mlx_hook(all->win, 6, 1L << 6, refresh_julia, all);
+	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
+	refresh_window(all);
 	mlx_loop(all->init);
 }
 
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_all	*all;
 
@@ -60,7 +59,7 @@ int	main(int ac, char **av)
 		|| !ft_strcmp(av[1], "julia")
 		|| !ft_strcmp(av[1], "burningship")))
 	{
-		all = (t_all *) malloc(sizeof(t_all));
+		all = (t_all *)malloc(sizeof(t_all));
 		init_all(all);
 		gestion(all, av[1]);
 	}

@@ -6,18 +6,20 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 15:04:12 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 12:04:46 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
-#include <stdio.h>
 
-void    quit(t_all *all)
+void	quit(t_all *all)
 {
 	mlx_destroy_image(all->init, all->image_ptr);
-	mlx_clear_window(all->init, all->win);
+	mlx_destroy_window(all->init, all->win);
+	free(all->ptrcolor);
+	free(all->ptrfract);
+	free(all->fract);
 	exit(0);
 }
 
@@ -31,17 +33,17 @@ void	move(t_all *all, int keycode)
 		all->fract->minX += ratio / 100;
 		all->fract->maxX += ratio / 100;
 	}
-	if (keycode == 123)
+	else if (keycode == 123)
 	{
 		all->fract->minX -= ratio / 100;
 		all->fract->maxX -= ratio / 100;
 	}
-	if (keycode == 126)
+	else if (keycode == 126)
 	{
 		all->fract->minY -= ratio / 100;
 		all->fract->maxY -= ratio / 100;
 	}
-	if (keycode == 125)
+	else if (keycode == 125)
 	{
 		all->fract->minY += ratio / 100;
 		all->fract->maxY += ratio / 100;
@@ -67,20 +69,18 @@ int		key_func(int keycode, t_all *all)
 {
 	if (keycode >= 123 && keycode <= 126)
 		move(all, keycode);
-	if (keycode == 53)
+	else if (keycode == 53)
 		quit(all);
-	if (keycode == 15)
+	else if (keycode == 15)
 		reinit(all);
-	if (keycode == 49)
+	else if (keycode == 49)
 		change_fract(all);
-	if (keycode == 37)
+	else if (keycode == 37)
 	{
 		if (all->fract->pause == 0)
 			all->fract->pause = 1;
 		else
 			all->fract->pause = 0;
 	}
-	refresh_window(all);
-	printf("keycode = %i\n", keycode);
 	return (0);
 }

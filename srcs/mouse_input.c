@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:02:57 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 12:31:29 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/19 11:55:28 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,12 +32,6 @@ void	refresh_window(t_all *all)
 	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 }
 
-int		c_julia(int mousecode, int x, int y, t_all *all)
-{
-	conv(x, y, &all->fract->mouse, *all->fract);
-	return (mousecode);
-}
-
 int		refresh_julia(int x, int y, t_all *all)
 {
 	if (all->fract->pause == 0)
@@ -48,16 +42,15 @@ int		refresh_julia(int x, int y, t_all *all)
 	return (0);
 }
 
-int 	mouse_func(int mousecode, int x, int y, t_all *all)
+int		mouse_func(int mousecode, int x, int y, t_all *all)
 {
-	//	printf("%i\n%i\n%i\n", mousecode, x, y);
 	if (mousecode == 1)
 		all->icolor++;
-	if (mousecode == 2)
+	else if (mousecode == 2)
 		all->icolor--;
-	if (mousecode == 4)
+	else if (mousecode == 4)
 		zoom(all, x, y);
-	if (mousecode == 5)
+	else if (mousecode == 5)
 		unzoom(all, x, y);
 	refresh_window(all);
 	return (0);
