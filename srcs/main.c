@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 17:32:14 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/20 12:41:49 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,6 +55,7 @@ int		gestion(t_all *all, char *s)
 	mlx_key_hook(all->win, key_func, all);
 	if (all->ifract == 1 && all->fract->pause == 0)
 		mlx_hook(all->win, 6, 1L << 6, refresh_julia, all);
+	mlx_hook(all->win, 17, 1L << 17, quit, all);
 	mlx_put_image_to_window(all->im_s, all->win, all->image_ptr, 0, 0);
 	refresh_window(all);
 	mlx_loop(all->init);

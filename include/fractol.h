@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:08:11 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 17:32:12 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/20 12:38:58 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -70,6 +70,7 @@ typedef void		(*t_ptrfract) (t_all *all);
 typedef void		(*t_ptrcolor) (char*, double, double, double);
 
 int					refresh_julia(int x, int y, t_all *all);
+int					quit(t_all *all);
 void				calc_mandelbrot(t_comp *c, t_comp *z, t_comp *sqrz);
 void				calc_julia(t_comp *c, t_comp *z, t_comp *sqrz);
 void				calc_burningship(t_comp *c, t_comp *z, t_comp *sqrz);
