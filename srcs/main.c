@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/11 18:10:20 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/20 12:41:49 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/20 13:39:16 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -78,6 +78,11 @@ int		main(int ac, char **av)
 		gestion(all, av[1]);
 	}
 	else
-		ft_putendl("fract-ol usage:");
+	{
+		ft_putstr("usage:\t");
+		ft_putendl("fractol mandelbrot");
+		ft_putendl("\tfractol julia");
+		ft_putendl("\tfractol burningship");
+	}
 	return (0);
 }

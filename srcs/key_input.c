@@ -6,7 +6,7 @@
 /*   By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/12 17:07:34 by befuhro      #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/20 12:43:25 by befuhro     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/20 13:39:53 by befuhro     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -60,13 +60,6 @@ void	reinit(t_all *all)
 	all->fract->maxy = 1.25;
 }
 
-void	change_fract(t_all *all)
-{
-	all->ifract++;
-	if (all->ifract == 2)
-		all->ifract = 0;
-}
-
 int		key_func(int keycode, t_all *all)
 {
 	if (keycode >= 123 && keycode <= 126)
@@ -75,8 +68,6 @@ int		key_func(int keycode, t_all *all)
 		quit(all);
 	else if (keycode == 15)
 		reinit(all);
-	else if (keycode == 49)
-		change_fract(all);
 	else if (keycode == 37)
 	{
 		if (all->fract->pause == 0)

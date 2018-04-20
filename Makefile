@@ -33,7 +33,7 @@ MLX = 			$(MLX_PATH)libmlx.a
 
 CC = 			clang
 CFLAGS = 		-g -Wall -Wextra -Werror
-NAME = 			fract-ol
+NAME = 			fractol
 
 .PHONY: all clean fclean re
 

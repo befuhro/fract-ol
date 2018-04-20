@@ -6,7 +6,7 @@
 #    By: befuhro <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/17 10:09:49 by befuhro           #+#    #+#              #
-#    Updated: 2017/11/30 17:25:05 by befuhro     ###    #+. /#+    ###.fr      #
+#    Updated: 2018/04/20 13:32:20 by befuhro     ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJ = ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_memchr.o \
 
 all: $(NAME)
 
-%.o: %.c
+%.o: %.c libft.h
 	$(CC) $(FLAGS) -c -o $@ $<
 
 $(NAME): $(OBJ)
