@@ -1,10 +1,10 @@
 # Fract'ol
 
 ## Objectifs
-Fract'ol est projet d'école qui reproduit des différentes fractales  
-Il est realisé en C à l'aide de la minilibx (librairie minimaliste propre a l'ecole 42)  
-Les fractales que j'ai réalisé pour ce projet sont celles de mandelbrot, julia (qui sont imposées) et celle du burningship (optionnelle)  
-Pour la partie bonus, j'ai implémenter le multithreading grâce à la librairie pthread et différentes couleurs disponibles  
+Fract'ol est un projet d'école qui reproduit différentes fractales  
+Il est realisé en C à l'aide de la minilibx (librairie minimaliste conçue pour les projet d'épitech et de 42)  
+Les fractales que j'ai réalisées pour ce projet sont mandelbrot et julia (qui sont imposées), et celle du burningship (optionnelle)  
+Pour la partie bonus, j'ai implémenté le multithreading grâce à la librairie pthread et différentes couleurs disponibles  
 
 ## Contraintes techniques  
 Ce projet à été réalisé sur un imac et ne fonctionne malheureusement pas sous linux  
@@ -14,7 +14,7 @@ Un Makefile est présent sur le repo, il faudra donc utiliser la commande suivan
 ```
 make
 ```
-Si vous lancer le binaire, vous pourrez voir l'usage pour visualiser les différentes fractales.
+Si vous lancez le binaire, vous pourrez voir l'usage pour visualiser les différentes fractales.
 ```
 ./fractol
 usage:	fractol mandelbrot
