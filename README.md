@@ -1,6 +1,6 @@
 # Fract'ol
 
-## Objectifs
+## Description
 Fract'ol est un projet d'école qui reproduit différentes fractales  
 Il est realisé en C à l'aide de la minilibx (librairie minimaliste conçue pour les projet d'épitech et de 42)  
 Les fractales que j'ai réalisées pour ce projet sont mandelbrot et julia (qui sont imposées), et celle du burningship (optionnelle)  
