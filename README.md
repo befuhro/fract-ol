@@ -25,7 +25,7 @@ usage:	fractol mandelbrot
 ## Utilisation du programme 
 * Changer de couleurs: clique gauche et clique droit  
 * Zoommer et dézoomer: molette de la souris  
-* Stoper le mouvement de julia: L
+* Stopper le mouvement de julia: L
 * Déplacement: flèches
  
 ## Notions abordees
